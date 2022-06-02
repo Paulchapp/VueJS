@@ -43,7 +43,8 @@ loadSavedJwt()
 
 
   <template>
-
+    <Helloworld />
+    <hr>
     <h1>Paul App</h1>
     <p> {{compteur}} </p>
     <button v-on:click="reset()">reset </button>
@@ -57,7 +58,10 @@ loadSavedJwt()
 
     <button @click="">Afficher les Claims</button>
     <p>{{Claims}}</p>
-
+    <hr>
+    <button @click="saveJwt()">Sauvegarder le token</button>
+    <p>{{savedJwt}}</p>
+    
   </template>
 
   <style></style>
