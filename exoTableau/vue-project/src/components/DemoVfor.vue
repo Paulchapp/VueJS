@@ -2,21 +2,19 @@
 
 import {ref} from "vue"
 
-const tableau = ref([1, 2, 3])
+const user = ref(null)
 
 </script>
 
 <template>
 
 <h1>Hello, world</h1>
-<p v-for="i in tableau">{{i}}</p>
-<ul>
-    <li v-for="monObjet in listDObjets" :keys="monObjet.id">{{monObjet}}</li>
-</ul>
-<div v-for="monOjet in ListOjets" :keys="monOjet.id">
-      <h2>{{monOjet.name}}</h2>
-      <p>{{monOjet.id}}</p>
-</div>
+<hr>
+<h2>Hello Anonyme</h2>
+<h2>Hello {{user}}</h2>
+<button>se connecter</button>
+<button>se déconnecter</button>
+
 </template>
 
 <style></style>
