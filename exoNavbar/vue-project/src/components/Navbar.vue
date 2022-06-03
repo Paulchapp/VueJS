@@ -6,10 +6,10 @@ import { RouterLink } from "vue-router";
     <router-link to="/" class="navbar-brand">Home</router-link>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <router-link to="/demojwt" class="nav-link">DemoJWT</router-link>
+        <router-link to="/demojwt" class="nav-link">JWT</router-link>
       </li>
       <li class="nav-item active">
-        <router-link to="/demovfor" class="nav-link">DemoVFor</router-link>
+        <router-link to="/demovfor" class="nav-link">VFor</router-link>
       </li>
       <li class="nav-item active">
         <router-link to="/signup" class="nav-link">Inscription</router-link>

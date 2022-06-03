@@ -9,6 +9,7 @@
   "dependencies": {
     "boostrap": "^2.0.0",
     "bootstrap": "^5.2.0-beta1",
+    "jose": "^4.8.1",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15"
   },

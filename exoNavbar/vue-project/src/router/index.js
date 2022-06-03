@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
-import DemoJwt from "../components/Jwt.vue";
-import DemoVFor from "../components/Vfor.vue";
-import Home from "../components/Accueil.vue";
-import SignIn from "../components/Signin.vue";
-import SignUp from "../components/Signup.vue";
+import Jwt from "../components/Jwt.vue";
+import VFor from "../components/Vfor.vue";
+import Accueil from "../components/Accueil.vue";
+import Signin from "../components/Signin.vue";
+import Signup from "../components/Signup.vue";
 
 const router = createRouter({
   history: createWebHistory(),
