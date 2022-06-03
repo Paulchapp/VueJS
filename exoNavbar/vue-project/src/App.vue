@@ -1,29 +1,63 @@
 <script setup>
 
-import {ref} from "vue"
+import { useUserStore } from '@/services/userStore';
 
+const { user } = useUserStore();
 
 </script>
 
 <template>
 
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <main class="container">
+    
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-2">
+      <span class="navbar-brand" v-if="user">Hey {{ user.name }}</span>
+      <span class="navbar-brand" v-else>Welcome</span>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          
+          <li class="nav-item active"><RouterLink class="nav-link" to="/">Accueil</RouterLink></li>
+          
+          <li v-if="user" class="nav-item">
+            <RouterLink class="nav-link" :to="{name:'demovfor'}">Demo v-for</RouterLink>
+          </li>
+
+          <li v-if="user" class="nav-item">
+            <RouterLink class="nav-link" :to="{name:'jwt'}">Exo jwt</RouterLink>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <ul class="navbar-nav mr-auto">
+        <li v-if="!user" class="nav-item">
+          <RouterLink class="nav-link btn btn-success" :to="{name:'connexion'}">Connexion</RouterLink>
+        </li>
+
+        <li v-if="!user" class="nav-item m-2 mt-0 mb-0">
+          <RouterLink class="nav-link btn btn-warning" :to="{name:'inscription'}">S'inscrire</RouterLink>
+        </li>
+
+        <li v-if="user" class="nav-item m-2 mt-0 mb-0">
+          <RouterLink class="nav-link btn btn-danger" :to="{name:'accueil'}" @click="deconnexion()">Déconnexion</RouterLink>
+        </li>
+      </ul>
+    </nav>
+
+    <RouterView />
+    <!-- <=> -->
+    <!-- <router-view></router-view> -->
+    <!-- <=> -->
+    <!-- <router-view/> -->
+  </main>
 
 </template>
 
-<style>@import 'bootstrap/dist/css/bootstrap.min.css';</style>
+<style>
+  @import 'bootstrap/dist/css/bootstrap.min.css';
+  nav a{
+    color: white !important;
+  }
+</style>

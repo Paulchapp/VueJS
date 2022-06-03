@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "boostrap": "^2.0.0",
-    "vue": "^3.2.36"
+    "bootstrap": "^5.2.0-beta1",
+    "vue": "^3.2.36",
+    "vue-router": "^4.0.15"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
