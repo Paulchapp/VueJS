@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Jwt from "../components/Jwt.vue";
-import VFor from "../components/Vfor.vue";
+import Vfor from "../components/Vfor.vue";
 import Accueil from "../components/Accueil.vue";
 import Signin from "../components/Signin.vue";
 import Signup from "../components/Signup.vue";

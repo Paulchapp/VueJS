@@ -15,7 +15,7 @@ const handleDelelte = (id) => {
 </script>
 
 <template>
-  <h3>mon list:</h3>
+  <h3>ma liste:</h3>
   <ul v-for="element in tableau" :key="element.id" class="list-group">
     <span @click="handleDelelte(element.id)"
       ><li class="list-group-item">
