@@ -1,63 +1,16 @@
 <script setup>
-
-import { useUserStore } from '@/services/userStore';
-
-const { user } = useUserStore();
-
+import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-
-  <main class="container">
-    
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-2">
-      <span class="navbar-brand" v-if="user">Hey {{ user.name }}</span>
-      <span class="navbar-brand" v-else>Welcome</span>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          
-          <li class="nav-item active"><RouterLink class="nav-link" to="/">Accueil</RouterLink></li>
-          
-          <li v-if="user" class="nav-item">
-            <RouterLink class="nav-link" :to="{name:'demovfor'}">Demo v-for</RouterLink>
-          </li>
-
-          <li v-if="user" class="nav-item">
-            <RouterLink class="nav-link" :to="{name:'jwt'}">Exo jwt</RouterLink>
-          </li>
-
-        </ul>
-
-      </div>
-
-      <ul class="navbar-nav mr-auto">
-        <li v-if="!user" class="nav-item">
-          <RouterLink class="nav-link btn btn-success" :to="{name:'connexion'}">Connexion</RouterLink>
-        </li>
-
-        <li v-if="!user" class="nav-item m-2 mt-0 mb-0">
-          <RouterLink class="nav-link btn btn-warning" :to="{name:'inscription'}">S'inscrire</RouterLink>
-        </li>
-
-        <li v-if="user" class="nav-item m-2 mt-0 mb-0">
-          <RouterLink class="nav-link btn btn-danger" :to="{name:'accueil'}" @click="deconnexion()">Déconnexion</RouterLink>
-        </li>
-      </ul>
-    </nav>
-
-    <RouterView />
-    <!-- <=> -->
-    <!-- <router-view></router-view> -->
-    <!-- <=> -->
-    <!-- <router-view/> -->
-  </main>
-
+  <div class="container">
+    <header>
+      <Navbar />
+    </header>
+    <router-view />
+  </div>
 </template>
 
 <style>
-  @import 'bootstrap/dist/css/bootstrap.min.css';
-  nav a{
-    color: white !important;
-  }
+@import "bootstrap/dist/css/bootstrap.min.css";
 </style>
